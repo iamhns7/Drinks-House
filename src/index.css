@@ -9,8 +9,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  
+  height: auto;
 }
 
 .customer-form {
@@ -20,6 +19,7 @@ body, html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
+  height: auto;
 }
 
 .customer-form h2 {
@@ -28,9 +28,9 @@ body, html {
   color: #805e5e;
 }
 
-.customer-form p {
+.customer-form h3 {
   text-align: center;
-  color: #000000;
+  color: #1f1d1d;
   margin-bottom: 20px;
 }
 
@@ -67,7 +67,6 @@ body, html {
   margin-top: -5px;
   color: red !important;
   text-align: left !important;
- 
 }
 
 
@@ -75,7 +74,6 @@ body, html {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +83,74 @@ body, html {
  
   padding: 30px;
   border-radius: 10px;
-  
-  
 }
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.form-box {
+  width: 400px;
+  padding: 20px;
+  background-color: #b0afafcc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  max-height: 90vh;
+  height: auto;
+}
+
+.select-category {
+  width: 100%;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.select-alcohol {
+  width: 100%;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.select-ingredient {
+  width: 100%;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.select-drink {
+  width: 100%;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+
+.drink-details {
+  margin-top: 20px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #3a3a3a; 
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.submit-button:hover {
+ background: #5c5c5c;
+  transform: scale(1.01);
+} 
+
+

@@ -3,6 +3,8 @@ import type { ChangeEvent, FormEvent } from "react";
 import { validateEmail, validatePhone, validateName, validateSurname } from "../validate/validateCostumer";
 import '../index.css';
 import type { Customer } from "../interfaces/CustomerInterface";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function CustomerFormPage() {
@@ -20,7 +22,8 @@ export default function CustomerFormPage() {
     phone: "",
   });
 
-  
+  const navigate = useNavigate();
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -44,45 +47,45 @@ export default function CustomerFormPage() {
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const firstNameError = validateName(customer.firstName);
-    if (firstNameError) {
-      setErrors({ ...errors, firstName: firstNameError });
-      return;
-    }
+  const firstNameError = validateName(customer.firstName);
+  if (firstNameError) {
+    setErrors({ ...errors, firstName: firstNameError });
+    return;
+  }
 
-    const lastNameError = validateSurname(customer.lastName);
-    if (lastNameError) {
-      setErrors({ ...errors, lastName: lastNameError });
-      return;
-    }
+  const lastNameError = validateSurname(customer.lastName);
+  if (lastNameError) {
+    setErrors({ ...errors, lastName: lastNameError });
+    return;
+  }
 
-    const emailError = validateEmail(customer.email);
-    if (emailError) {
-      setErrors({ ...errors, email: emailError });
-      return;
-    }
+  const emailError = validateEmail(customer.email);
+  if (emailError) {
+    setErrors({ ...errors, email: emailError });
+    return;
+  }
 
-    const phoneError = validatePhone(customer.phone);
-    if (phoneError) {
-      setErrors({ ...errors, phone: phoneError });
-      return
-    } 
-    const phoneNumber: number = parseInt(customer.phone);
-    console.log("Phone as number:", phoneNumber);
+  const phoneError = validatePhone(customer.phone);
+  if (phoneError) {
+    setErrors({ ...errors, phone: phoneError });
+    return;
+  } 
 
-    alert(
-      `Customer Info:\nFirst Name: ${customer.firstName}\nLast Name: ${customer.lastName}\nEmail: ${customer.email}\nPhone: ${customer.phone}`
-    );
-  };
+  const phoneNumber: number = parseInt(customer.phone);
+  console.log("Phone as number:", phoneNumber);
+  
+  navigate("/categories");
+};
+
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="customer-form">
         <div className="form-text">
           <h2>Welcome to Drink House!</h2>
-          <p>Enter your information please</p>
+          <h3>Can you enter your information please</h3>
         </div>
 
 <input
@@ -144,3 +147,4 @@ export default function CustomerFormPage() {
     </div>
   );
 }
+ 
