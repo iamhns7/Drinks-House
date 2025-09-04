@@ -9,18 +9,18 @@ export const validateName = (name: string): string | null => {
 export const validateSurname = (surname: string): string | null => {
   if (!surname.trim()) return "This field is required";
   if (!/^[A-Za-zğüşöçıİĞÜŞÖÇ]+$/.test(surname)) return "Only letters allowed";
-   return null;
+  return null;
 };
 
 // Validate Email
 export const validateEmail = (email: string): string | null => {
-  if (!email.trim()) return "Email is required";
+  if (!email.trim()) return "This field is required";
   if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email))
     return "Invalid email format";
   return null;
 };
 
-// Validate  Phone
+// Validate Phone
 export const validatePhone = (phone: string): string | null => {
   if (!phone.trim()) return "Phone number is required";
   if (!/^05\d{9}$/.test(phone))

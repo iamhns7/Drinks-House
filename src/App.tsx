@@ -1,16 +1,14 @@
- import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLayout from "./layout/mainLayout.tsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainPage from "./pages/MainPage.tsx";
 import drinkImg from "./assets/drinkImg.jpeg";
-import CustomerFormPage from "./pages/CustomerFormPage.tsx";
-import CategoryPage from "./pages/CategoryPage.tsx";
+import MainLayout from "./layout/MainLayout.tsx";
 
 function App() {
   return (
     <Router>
       <MainLayout backgroundImage={drinkImg}>
         <Routes>
-          <Route path="/" element={<CustomerFormPage />} />
-          <Route path="/categories" element={<CategoryPage />} />
+          <Route path="/" element={<MainPage />} />
         </Routes>
       </MainLayout>
     </Router>
@@ -18,4 +16,3 @@ function App() {
 }
 
 export default App;
- 

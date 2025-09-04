@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Category, Drink, DrinkDetails } from "../interfaces/CategoryInterfaces";
+import type { Category, Drink } from "../interfaces/CategoryInterfaces";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -20,21 +20,16 @@ export const fetchIngredients = async (): Promise<{ strIngredient1: string }[]> 
   const res = await axios.get(`${BASE_URL}list.php?i=list`);
   return res.data.drinks;
 };
-
-// Fetch drinks when any filter changes: Category, Alcoholic, or Ingredient
-export const fetchDrinksByFilter = async (urls: string[]): Promise<Drink[]> => {
-  const results = await Promise.all(
-    urls.map(url => axios.get(url).then(res => res.data.drinks || []))
-  );
-
-  return results.reduce((acc: Drink[], curr: Drink[]) => {
-    if (acc.length === 0) return curr;
-    const ids = new Set(curr.map(d => d.idDrink));
-    return acc.filter(d => ids.has(d.idDrink));
-  }, [] as Drink[]);
+// Fetch the list of all glasses for the filter dropdown
+export const fetchGlassTypes = async (): Promise<{ strGlass: string }[]> => {
+  const res = await axios(`${BASE_URL}list.php?g=list`);
+ 
+  return res.data.drinks; 
 };
 
-export const fetchDrinkDetails = async (id: string): Promise<DrinkDetails> => {
-  const res = await axios.get(`${BASE_URL}lookup.php?i=${id}`);
-  return res.data.drinks[0];
+// Fetch drinks by category (returns all drinks in that category)
+export const fetchDrinksByCategory = async (category: string): Promise<Drink[]> => {
+  const res = await axios.get(`${BASE_URL}filter.php?c=${encodeURIComponent(category)}`);
+  return res.data.drinks || [];
 };
+

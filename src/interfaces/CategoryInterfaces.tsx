@@ -5,15 +5,8 @@ export interface Category {
 export interface Drink {
   idDrink: string;
   strDrink: string;
-  strDrinkThumb: string;
-  strAlcoholic?: string; 
+strDrinkThumb: string
 }
 
-export interface DrinkDetails {
-  idDrink: string;
-  strDrink: string;
-  strDrinkThumb: string;
-  strInstructions: string;
-  strAlcoholic: string;
 
-}
+
