@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Category, Drink } from "../interfaces/CategoryInterfaces";
+import type { Category, Drink, DrinkDetail } from "../interfaces/CategoryInterfaces";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -33,3 +33,8 @@ export const fetchDrinksByCategory = async (category: string): Promise<Drink[]> 
   return res.data.drinks || [];
 };
 
+// Fetch drink details by ID
+export const fetchDrinkDetails = async (id: string): Promise<DrinkDetail> => {
+  const res = await axios.get(`${BASE_URL}lookup.php?i=${id}`);
+  return res.data.drinks[0];
+};

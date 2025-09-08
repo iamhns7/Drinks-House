@@ -8,5 +8,11 @@ export interface Drink {
 strDrinkThumb: string
 }
 
+export interface DrinkDetail {
+  idDrink: string;
+  strDrink: string;
+  [key: string]: string | null | undefined; 
+}
+
 
 

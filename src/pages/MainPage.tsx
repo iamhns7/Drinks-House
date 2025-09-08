@@ -62,6 +62,7 @@ export default function MainPage() {
     null
   );
 
+
   // Load dropdown data once
   useEffect(() => {
     fetchCategories().then(setCategories).catch(console.error);
@@ -79,15 +80,16 @@ export default function MainPage() {
   }, [step]);
 
   // Fetch drinks when step 4
-  useEffect(() => {
-    if (step !== 4 || !storedSelection?.category) return;
-    setLoadingDrinks(true);
+ useEffect(() => {
+  if (step !== 4 || !storedSelection?.category) return;
+  setLoadingDrinks(true);
 
-    fetchDrinksByCategory(storedSelection.category)
-      .then(setDrinksByCategory)
-      .catch(console.error)
-      .finally(() => setLoadingDrinks(false));
-  }, [step, storedSelection]);
+  fetchDrinksByCategory(storedSelection.category)
+    .then(setDrinksByCategory)
+    .catch(console.error)
+    .finally(() => setLoadingDrinks(false));
+}, [step, storedSelection?.category]); 
+
 
   // Handlers
   const handleCustomerChange = (e: ChangeEvent<HTMLInputElement>) => {

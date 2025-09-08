@@ -143,29 +143,22 @@ select {
 
 .drink-cards-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-content: center;
+  height: auto;
 }
 
 .drink-card {
   border: 1px solid #545454;
   border-radius: 8px;
   padding: 10px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  height: 250px;
-  width: 120px;
+  height: auto;
+  width: 270px;
   background-color: #c5c6c6;
   transition: all 0.3s ease-in-out;
-}
-
-.drink-card:hover {
-  transition: cubic-bezier();
-  background-color: #b5b3b3;
-  transform: scale(1.01);
 }
 
 .drink-card img {
@@ -183,19 +176,65 @@ select {
 .drink-card p,
 .drink-card li {
   font-size: 13px;
-  color: #555;
+  color: #444444;
 }
 
 .drink-card ul {
-  padding-left: 15px;
-  list-style-type: disc;
-  width: 100%;
+  padding-left: 1.2rem;     
+}
+
+.card-button{
+  height: 28px;
+  width: 35%;
+  background-color: #5a8cbf;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  
+}
+
+.card-button:hover{
+  background-color: #4e80b1;
+  transform: scale(1.01);
+}
+.card-button-less-button{
+  width: 35%;
+  height: 28px;
+  background-color: #5a8cbf;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 75px;
+}
+
+.card-button-less-button:hover{
+  background-color: #4e80b1;
+  transform: scale(1.01);
+}
+
+.drink-detail{
+  background-color: #eee;
+  width: 100%; 
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.detail-strdrink{
+  padding: 20px
+}
+
+.image-detail{
+  width: 100%; 
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .drink-submit-button-done{
-  width: 100%;
+  width: 97%;
+  margin-left: 13px;
   padding: 12px 0;
-  margin-top: 20px;
+  margin-top: 8px;
   margin-bottom: 10px;
   background-color: #3a3a3a;
   color: white;
@@ -205,11 +244,13 @@ select {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+
 .drink-submit-button-back{
-   width: 100%;
+  width: 97%;
+  margin-left: 13px;
   padding: 12px 0;
-  margin-top: 7px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 7px;
   background-color: #3a3a3a;
   color: white;
   font-size: 16px;
@@ -228,3 +269,4 @@ select {
    background-color: #5c5c5c;
   transform: scale(1.01);
 }
+
