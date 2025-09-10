@@ -81,7 +81,8 @@ export default function MainPage() {
 
   // Fetch drinks when step 4
  useEffect(() => {
-  if (step !== 4 || !storedSelection?.category) return;
+  if (step !== 4 || !storedSelection?.category) 
+    return;
   setLoadingDrinks(true);
 
   fetchDrinksByCategory(storedSelection.category)

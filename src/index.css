@@ -173,6 +173,7 @@ select {
   margin: 5px 0;
   white-space: nowrap;
 }
+
 .drink-card p,
 .drink-card li {
   font-size: 13px;
@@ -183,9 +184,17 @@ select {
   padding-left: 1.2rem;     
 }
 
+.card-buttons{
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 20px;
+  gap: 35px; 
+  
+}
+
 .card-button{
+  width: 70px;
   height: 28px;
-  width: 35%;
   background-color: #5a8cbf;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -197,13 +206,12 @@ select {
   transform: scale(1.01);
 }
 .card-button-less-button{
-  width: 35%;
+  width: 70px;
   height: 28px;
   background-color: #5a8cbf;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  margin-top: 5px;
-  margin-left: 75px;
+ 
 }
 
 .card-button-less-button:hover{
@@ -212,9 +220,9 @@ select {
 }
 
 .drink-detail{
-  background-color: #eee;
+background-color: #dcddde;
   width: 100%; 
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 10px;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -225,7 +233,7 @@ select {
 }
 
 .image-detail{
-  width: 100%; 
+  width: auto; 
   object-fit: cover;
   border-radius: 5px;
 }
@@ -268,5 +276,52 @@ select {
 .drink-submit-button-back:hover{
    background-color: #5c5c5c;
   transform: scale(1.01);
+}
+ 
+.drink-card .title-skeleton{
+  width: 250px;
+  height: 25px;
+  margin: 15px 0;
+  
+}
+
+.drink-card .image-skeleton{
+  width: 250px;
+  height: 150px;
+}
+
+.drink-card .id-skeleton{
+  margin: 15px 0;
+  width: 150px;
+  height: 30px;
+}
+
+.card-buttons .more-skeleton{
+  width: 70px;
+  height: 30px;
+}
+
+.card-buttons .less-skeleton{
+  width: 70px;
+  height: 30px;
+}
+
+.drink-detail .title-skeleton{
+  width: 250px;
+  height: 28px;
+  margin: 15px 0;
+  
+}
+
+.drink-detail .image-skeleton{
+  width: 250px;
+  height: 150px; 
+}
+
+.drink-detail .detail-by-id-skeleton{
+  margin-top: 25px;
+  width: 250px;
+  height: 370px;
+  
 }
 
