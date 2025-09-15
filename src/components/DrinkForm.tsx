@@ -8,7 +8,9 @@ import "../index.css";
 
 interface CategoryDrinkProps {
   storedSelection: Selection;
+  drinksByCategory: Drink[];
   setStep: (step: 1 | 2 | 3 | 4) => void;
+  loadingDrinks: boolean;
 }
 
 export default function DrinkForm({ storedSelection, setStep }: CategoryDrinkProps) {

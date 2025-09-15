@@ -1,0 +1,17 @@
+{
+  "customerForm": {
+    "welcomeMessage": "Welcome to Drink House",
+    "enterInfo": "Please enter your information",
+    "namePlaceholder": "Name",
+    "surnamePlaceholder": "Surname",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "05",
+    "nextButton": "Next",
+    "errors": {
+      "required": "This field is required",
+      "lettersOnly": "Only letters allowed",
+      "invalidEmail": "Invalid email format",
+      "invalidPhone": "Phone must start with 05 and be exactly 11 digits"
+    }
+  }
+}

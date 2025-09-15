@@ -1,0 +1,17 @@
+{
+  "customerForm": {
+    "welcomeMessage": "مرحبا بكم في بيت المشروبات",
+    "enterInfo": "الرجاء إدخال معلوماتك",
+    "namePlaceholder": "الاسم",
+    "surnamePlaceholder": "اللقب",
+    "emailPlaceholder": "البريد الإلكتروني",
+    "phonePlaceholder": "05",
+    "nextButton": "التالي",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "lettersOnly": "يُسمح بالأحرف فقط",
+      "invalidEmail": "تنسيق البريد الإلكتروني غير صالح",
+      "invalidPhone": "يجب أن يبدأ الهاتف بـ 05 ويكون 11 رقمًا بالضبط"
+    }
+  }
+}
