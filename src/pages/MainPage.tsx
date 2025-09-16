@@ -20,9 +20,14 @@ import CustomerForm from "../components/CustomerForm";
 import CategoryForm from "../components/CategoryForm";
 import ReceiptForm from "../components/ReceiptForm";
 import CategoryDrink from "../components/DrinkForm";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
+
 
 export default function MainPage() {
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+
+  const { t } = useTranslation();
 
   // Customer state
   const [customer, setCustomer] = useState<Customer>({
@@ -92,59 +97,59 @@ export default function MainPage() {
 }, [step, storedSelection?.category]); 
 
 
-  // Handlers
   const handleCustomerChange = (e: ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
   setCustomer({ ...customer, [name]: value });
 
   let errorMessage: string | null = null;
-  if (name === "firstName") errorMessage = validateName(value);
-  else if (name === "lastName") errorMessage = validateSurname(value);
-  else if (name === "email") errorMessage = validateEmail(value);
-  else if (name === "phone") errorMessage = validatePhone(value); 
+  if (name === "firstName") errorMessage = validateName(value, t);
+  else if (name === "lastName") errorMessage = validateSurname(value, t);
+  else if (name === "email") errorMessage = validateEmail(value, t);
+  else if (name === "phone") errorMessage = validatePhone(value, t);
 
   setErrors({ ...errors, [name]: errorMessage || "" });
 };
+
   const handleCustomerNext = () => {
-    const newErrors: Customer = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-    };
-    let hasError = false;
-
-    const fErr = validateName(customer.firstName);
-    if (fErr) {
-      newErrors.firstName = fErr;
-      hasError = true;
-    }
-
-    const lErr = validateSurname(customer.lastName);
-    if (lErr) {
-      newErrors.lastName = lErr;
-      hasError = true;
-    }
-
-    const eErr = validateEmail(customer.email);
-    if (eErr) {
-      newErrors.email = eErr;
-      hasError = true;
-    }
-
-    const pErr = validatePhone(customer.phone);
-    if (pErr) {
-      newErrors.phone = pErr;
-      hasError = true;
-    }
-
-    setErrors(newErrors);
-
-    if (!hasError) {
-      localStorage.setItem("customer", JSON.stringify(customer));
-      setStep(2);
-    }
+  const newErrors: Customer = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
   };
+  let hasError = false;
+
+  const fErr = validateName(customer.firstName, t);
+  if (fErr) {
+    newErrors.firstName = fErr;
+    hasError = true;
+  }
+
+  const lErr = validateSurname(customer.lastName, t);
+  if (lErr) {
+    newErrors.lastName = lErr;
+    hasError = true;
+  }
+
+  const eErr = validateEmail(customer.email, t);
+  if (eErr) {
+    newErrors.email = eErr;
+    hasError = true;
+  }
+
+  const pErr = validatePhone(customer.phone, t);
+  if (pErr) {
+    newErrors.phone = pErr;
+    hasError = true;
+  }
+
+  setErrors(newErrors);
+
+  if (!hasError) {
+    localStorage.setItem("customer", JSON.stringify(customer));
+    setStep(2);
+  }
+};
 
   const handleCategoryConfirm = () => {
     const selection: Selection = {
@@ -159,6 +164,13 @@ export default function MainPage() {
 
   return (
     <div className="main-background">
+      <div className="language-selector">
+        <select className="language-changer" onChange={(e) => i18n.changeLanguage(e.target.value)}>
+          <option  className="language-changer-option" value="en">English</option>
+          <option className="language-changer-option" value="ar">عربي</option>
+        </select>
+      </div>
+
       <div className="main-container">
         {step === 1 && (
           <CustomerForm

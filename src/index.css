@@ -322,6 +322,27 @@ background-color: #dcddde;
   margin-top: 25px;
   width: 250px;
   height: 370px;
-  
 }
 
+.language-selector {
+  position: fixed; 
+  top: 10px;      
+  left: 40px;      
+  z-index: 1000;  
+}
+.language-selector .language-changer{
+  background-color: rgba(176, 175, 175, 0.8);
+
+}
+
+.language-selector select {
+  background-color: #eee; 
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  color: black;
+}
+.language-changer-option{
+  background-color: #eee;
+}

@@ -1,6 +1,7 @@
 import type { ChangeEvent } from "react";
 import type { Customer } from "../interfaces/CustomerInterface";
 import "../index.css";
+import { useTranslation } from "react-i18next";
 
 interface CustomerFormProps {
   customer: Customer;
@@ -9,25 +10,26 @@ interface CustomerFormProps {
   handleCustomerNext: () => void;
 }
 
-
 export default function CustomerForm({
   customer,
   errors,
   handleCustomerChange,
   handleCustomerNext,
-}: CustomerFormProps)
- {
+}: CustomerFormProps) {
+  const { t } = useTranslation();
+  
+
   return (
     <div className="customer-form">
-      <h2>Welcome to Drink House</h2>
-      <h3>Please enter your information</h3>
+      <h2>{t("customerForm.welcome")}</h2>
+      <h3>{t("customerForm.enterInfo")}</h3>
 
       <input
         className="input-field"
         maxLength={25}
         type="text"
         name="firstName"
-        placeholder="Name"
+        placeholder={t("customerForm.placeholders.name")}
         value={customer.firstName}
         onChange={handleCustomerChange}
       />
@@ -38,7 +40,7 @@ export default function CustomerForm({
         maxLength={20}
         type="text"
         name="lastName"
-        placeholder="Surname"
+        placeholder={t("customerForm.placeholders.surname")}
         value={customer.lastName}
         onChange={handleCustomerChange}
       />
@@ -49,17 +51,17 @@ export default function CustomerForm({
         maxLength={25}
         type="email"
         name="email"
-        placeholder="Email"
+        placeholder={t("customerForm.placeholders.email")}
         value={customer.email}
         onChange={handleCustomerChange}
       />
       {errors.email && <p className="error">{errors.email}</p>}
 
-     <input
+      <input
         className="input-field"
         type="tel"
         name="phone"
-        placeholder="Phone"
+        placeholder={t("customerForm.placeholders.phone")}
         maxLength={11}
         value={customer.phone}
         onChange={(e) => {
@@ -67,8 +69,8 @@ export default function CustomerForm({
           handleCustomerChange({
             target: {
               name: "phone",
-              value: onlyNumbers
-            }
+              value: onlyNumbers,
+            },
           } as ChangeEvent<HTMLInputElement>);
         }}
       />
@@ -79,7 +81,7 @@ export default function CustomerForm({
         type="button"
         onClick={handleCustomerNext}
       >
-        Next
+        {t("customerForm.buttons.next")}
       </button>
     </div>
   );
