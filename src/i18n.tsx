@@ -4,7 +4,7 @@ import translationEN from "./translations/en/translation.json";
 import translationAR from "./translations/ar/translation.json";
 
 const resources = {
-  en: { translation: translationEN }, 
+  en: { translation: translationEN },
   ar: { translation: translationAR }
 };
 
@@ -12,7 +12,11 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en",
+    lng: "en",          
+    fallbackLng: "en", 
+    interpolation: {
+      escapeValue: false
+    }
   });
 
 export default i18n;
