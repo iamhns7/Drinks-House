@@ -23,7 +23,7 @@
   },
   "categoryForm": {
    "title":"اختر التصنيف",
-   
+
   "Selection": {
     "categoryLabel": "اختر الفئة",
     "alcoholLabel": "تصفية حسب الكحول",
@@ -34,5 +34,27 @@
     "confirmButton": "تأكيد الاختيار",
     "back": "عودة"
   }
-}
+},
+
+"receiptForm": {
+    "title": "الإيصال",
+    "customerInfoTitle": "معلومات العميل:",
+    "customerLabels": {
+      "name": "الاسم:",
+      "surname": "اللقب:",
+      "email": "البريد الإلكتروني:",
+      "phone": "الهاتف:"
+    },
+    "preferencesTitle": "تفضيلات المشروبات للعميل:",
+    "preferencesLabels": {
+      "category": "الفئة:",
+      "alcohol": "الكحول:",
+      "ingredient": "المكون:",
+      "glass": "نوع الزجاج:"
+    },
+    "buttons": {
+      "confirm": "تأكيد",
+      "back": "عودة"
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { Customer } from "../interfaces/CustomerInterface";
 import type { Selection } from "../interfaces/SelectionInterface";
 
@@ -12,42 +13,43 @@ export default function ReceiptForm({
   storedSelection,
   setStep,
 }: ReceiptFormProps) {
+   const { t } = useTranslation();
   return (
     <div className="receipt-container">
-      <h1 className="receipt-title">Receipt</h1>
-      <h3>Customer Info:</h3>
+      <h1 className="receipt-title">{t("receiptForm.title")}</h1>
+      <h3>{t("receiptForm.customerInfoTitle")}</h3>
       <p>
-        <strong>Name:</strong> {storedCustomer.firstName}{" "}
+        <strong>{t("receiptForm.customerLabels.name")}</strong> {storedCustomer.firstName}{" "}
       </p>
       <p>
-        <strong>Surname:</strong> {storedCustomer.lastName}
+        <strong>{t("receiptForm.customerLabels.surname")}</strong> {storedCustomer.lastName}
       </p>
       <p>
-        <strong>Email:</strong> {storedCustomer.email}
+        <strong>{t("receiptForm.customerLabels.email")}</strong> {storedCustomer.email}
       </p>
       <p>
-        <strong>Phone:</strong> {storedCustomer.phone}
+        <strong>{t("receiptForm.customerLabels.phone")}</strong> {storedCustomer.phone}
       </p>
-      <h3>Customer Drink Preferences:</h3>
+      <h3>{t("receiptForm.preferencesTitle")}</h3>
       <p>
-        <strong>Category:</strong> {storedSelection.category}
-      </p>
-      <p>
-        <strong>Alcohol:</strong> {storedSelection.alcohol}
+        <strong>{t("receiptForm.preferencesLabels.category")}</strong> {storedSelection.category}
       </p>
       <p>
-        <strong>Ingredient:</strong> {storedSelection.ingredient}
+        <strong>{t("receiptForm.preferencesLabels.alcohol")}</strong> {storedSelection.alcohol}
       </p>
       <p>
-        <strong>Glass: </strong>
+        <strong>{t("receiptForm.preferencesLabels.ingredient")}</strong> {storedSelection.ingredient}
+      </p>
+      <p>
+        <strong>{t("receiptForm.preferencesLabels.glass")} </strong>
         {storedSelection.glass}
       </p>
 
       <button className="submit-button" onClick={() => setStep(4)}>
-        Confirm
+         {t("receiptForm.buttons.confirm")}
       </button>
       <button className="submit-button" onClick={() => setStep(2)}>
-        Back
+         {t("receiptForm.buttons.back")}
       </button>
     </div>
   );

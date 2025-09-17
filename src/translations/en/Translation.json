@@ -36,6 +36,28 @@
     "back": "Back"
 }
   
+  },
+  
+  "receiptForm": {
+    "title": "Receipt",
+    "customerInfoTitle": "Customer Info:",
+    "customerLabels": {
+      "name": "Name:",
+      "surname": "Surname:",
+      "email": "Email:",
+      "phone": "Phone:"
+    },
+    "preferencesTitle": "Customer Drink Preferences:",
+    "preferencesLabels": {
+      "category": "Category:",
+      "alcohol": "Alcohol:",
+      "ingredient": "Ingredient:",
+      "glass": "Glass:"
+    },
+    "buttons": {
+      "confirm": "Confirm",
+      "back": "Back"
+    }
   }
 
 }
