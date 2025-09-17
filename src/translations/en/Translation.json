@@ -37,7 +37,7 @@
 }
   
   },
-  
+
   "receiptForm": {
     "title": "Receipt",
     "customerInfoTitle": "Customer Info:",
@@ -58,6 +58,17 @@
       "confirm": "Confirm",
       "back": "Back"
     }
+  },  "drinkForm": {
+    "title": "Drinks in {{category}}",
+    "noDrinks": "No drinks found",
+    "cardButtons": {
+      "more": "More",
+      "less": "Less"
+    },
+    "buttons": {
+      "back": "Back",
+      "done": "Done"
+    }
   }
-
+ 
 }

@@ -56,5 +56,19 @@
       "confirm": "تأكيد",
       "back": "عودة"
     }
+  },
+   "drinkForm": {
+    "title": "المشروبات في {{category}}",
+    "noDrinks": "لم يتم العثور على مشروبات",
+    "cardButtons": {
+      "more": "المزيد",
+      "less": "أقل"
+    },
+    "buttons": {
+      "back": "عودة",
+      "done": "تم"
+    }
+  
   }
+
 }

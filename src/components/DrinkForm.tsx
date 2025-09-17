@@ -5,6 +5,7 @@ import { fetchDrinkDetails, fetchDrinksByCategory } from "../services/Api";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "../index.css";
+import { useTranslation } from "react-i18next";
 
 interface CategoryDrinkProps {
   storedSelection: Selection;
@@ -19,6 +20,7 @@ export default function DrinkForm({ storedSelection, setStep }: CategoryDrinkPro
   const [loadingDetailId, setLoadingDetailId] = useState<string | null>(null);
   const [loadingDrinks, setLoadingDrinks] = useState(false);
 
+  const { t } = useTranslation();
   
 useEffect(() => {
   const fetchDrinks = async () => {
@@ -31,7 +33,7 @@ useEffect(() => {
 }, [storedSelection.category]);
 
 
-
+  
  
  const handleDrinkClick = async (id: string) => {
   setLoadingDetailId(id);        
@@ -40,9 +42,10 @@ useEffect(() => {
   setLoadingDetailId(null);       
 };
 
+
   return (
     <div className="drink-form-container">
-      <h1 className="drink-title">Drinks in {storedSelection.category}</h1>
+      <h1 className="drink-title">{t("drinkForm.title", { category: storedSelection.category })}</h1>
 
       {loadingDrinks ? (
         <div className="drink-cards-container">
@@ -61,7 +64,7 @@ useEffect(() => {
       ) : (
         <div className="drink-cards-container">
           {drinksByCategory.length === 0 ? (
-            <p>No drinks found</p>
+            <p>{t("drinkForm.noDrinks")}</p>
           ) : (
             drinksByCategory.map((drink) => (
               <div key={drink.idDrink} className="drink-card">
@@ -71,14 +74,14 @@ useEffect(() => {
 
                 <div className="card-buttons">
                   <button className="card-button" onClick={() => handleDrinkClick(drink.idDrink)}>
-                    More
+                    {t("drinkForm.cardButtons.more")}
                   </button>
                   {selectedDrinkDetail?.idDrink === drink.idDrink && (
                     <button
                       className="card-button-less-button"
                       onClick={() => setSelectedDrinkDetail(null)}
                     >
-                      Less
+                      {t("drinkForm.cardButtons.less")}
                     </button>
                   )}
                 </div>
@@ -121,10 +124,10 @@ useEffect(() => {
 
       <div className="drink-buttons">
         <button className="drink-submit-button-back" onClick={() => setStep(3)}>
-          Back
+        {t("drinkForm.buttons.back")}
         </button>
         <button className="drink-submit-button-done" onClick={() => setStep(1)}>
-          Done
+          {t("drinkForm.buttons.done")}
         </button>
       </div>
     </div>
