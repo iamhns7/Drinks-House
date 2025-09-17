@@ -18,7 +18,6 @@ export default function CustomerForm({
 }: CustomerFormProps) {
   const { t } = useTranslation();
   
-
   return (
     <div className="customer-form">
       <h2>{t("customerForm.welcome")}</h2>

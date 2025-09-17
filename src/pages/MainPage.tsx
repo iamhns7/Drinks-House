@@ -21,8 +21,7 @@ import CategoryForm from "../components/CategoryForm";
 import ReceiptForm from "../components/ReceiptForm";
 import CategoryDrink from "../components/DrinkForm";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
-
+import LanguageSelector from "../components/LanguageSelector";
 
 export default function MainPage() {
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
@@ -164,14 +163,9 @@ export default function MainPage() {
 
   return (
     <div className="main-background">
-      <div className="language-selector">
-        <select className="language-changer" onChange={(e) => i18n.changeLanguage(e.target.value)}>
-          <option  className="language-changer-option" value="en">English</option>
-          <option className="language-changer-option" value="ar">عربي</option>
-        </select>
-      </div>
-
-      <div className="main-container">
+      <LanguageSelector /> 
+    
+      <div className="main-container" >
         {step === 1 && (
           <CustomerForm
             customer={customer}

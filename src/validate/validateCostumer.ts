@@ -1,7 +1,6 @@
 import type { TFunction } from "i18next";
 
 
-
 export const validateName = (name: string, t: TFunction): string | null => {
   if (!name.trim())
     return t("customerForm.errors.required", { field: t("customerForm.placeholders.name") });
