@@ -1,3 +1,5 @@
+
+import { useTranslation } from "react-i18next";
 import type { Category } from "../interfaces/CategoryInterfaces";
 
 interface CategoryFormProps {
@@ -33,15 +35,16 @@ export default function CategoryForm({
   handleCategoryConfirm,
   setStep,
 }: CategoryFormProps) {
+  const { t } = useTranslation();
   return (
     <div className="category-form">
-      <h2>Select Filters</h2>
+      <h2>{t("categoryForm.title")}</h2>
 
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
       >
-        <option value="">Select Category</option>
+        <option value="">{t("categoryForm.Selection.categoryLabel")}</option>
         {categories.map((cat) => (
           <option key={cat.strCategory} value={cat.strCategory}>
             {cat.strCategory}
@@ -53,7 +56,7 @@ export default function CategoryForm({
         value={alcoholicFilter}
         onChange={(e) => setAlcoholicFilter(e.target.value)}
       >
-        <option value="">Filter by Alcohol</option>
+        <option value="">{t("categoryForm.Selection.alcoholLabel")}</option>
         {alcoholFilters.map((al) => (
           <option key={al.strAlcoholic} value={al.strAlcoholic}>
             {al.strAlcoholic}
@@ -65,7 +68,7 @@ export default function CategoryForm({
         value={selectedIngredient}
         onChange={(e) => setSelectedIngredient(e.target.value)}
       >
-        <option value="">Select Ingredient</option>
+        <option value="">{t("categoryForm.Selection.ingredientLabel")}</option>
         {ingredients.map((i) => (
           <option key={i.strIngredient1} value={i.strIngredient1}>
             {i.strIngredient1}
@@ -77,7 +80,7 @@ export default function CategoryForm({
         value={selectedGlass}
         onChange={(e) => setSelectedGlass(e.target.value)}
       >
-        <option value="">Select Glass</option>
+        <option value="">{t("categoryForm.Selection.glassLabel")}</option>
         {glasses.map((g) => (
           <option key={g.strGlass} value={g.strGlass}>
             {g.strGlass}
@@ -86,10 +89,10 @@ export default function CategoryForm({
       </select>
 
       <button className="submit-button" onClick={handleCategoryConfirm}>
-        Confirm Selection
+         {t("categoryForm.buttons.confirmButton")}
       </button>
       <button className="submit-button" onClick={() => setStep(1)}>
-        Back
+         {t("categoryForm.buttons.back")}
       </button>
     </div>
   );

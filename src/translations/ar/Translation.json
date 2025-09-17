@@ -20,5 +20,19 @@
       "invalidEmail": "تنسيق البريد الإلكتروني غير صالح",
       "invalidPhone": "يجب أن يبدأ الهاتف بـ 05 ويكون 11 رقمًا بالضبط"
     }
+  },
+  "categoryForm": {
+   "title":"اختر التصنيف",
+   
+  "Selection": {
+    "categoryLabel": "اختر الفئة",
+    "alcoholLabel": "تصفية حسب الكحول",
+    "ingredientLabel": "اختر المكون",
+    "glassLabel": "اختر نوع الزجاج"
+  },
+  "buttons": {
+    "confirmButton": "تأكيد الاختيار",
+    "back": "عودة"
   }
+}
 }
