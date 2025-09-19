@@ -22,9 +22,16 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  padding: 10px; 
+  box-sizing: border-box;
 }
 
-.customer-form {
+
+.customer-form,
+.category-form,
+.receipt-container,
+.drink-form-container {
   background-color: rgba(176, 175, 175, 0.8);
   padding: 25px 30px;
   border-radius: 12px;
@@ -33,35 +40,20 @@ html {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  width: 450px;
+  width: 90%;       
+  max-width: 450px; 
   height: auto;
+  box-sizing: border-box;
+}
+
+.drink-form-container {
+  max-width: 900px; 
 }
 
 .customer-form h2 {
   color: #926363;
   margin-bottom: 10px;
   text-align: center;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 4px;
-  margin-top: 2px;
-  width: 100%;
-}
-
-.category-form {
-  background-color: rgba(176, 175, 175, 0.8);
-  padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 450px;
-  height: auto;
 }
 
 .category-form h2 {
@@ -80,10 +72,12 @@ select {
   font-size: 14px;
 }
 
-.submit-button {
+.submit-button,
+.drink-submit-button-done,
+.drink-submit-button-back {
   width: 100%;
   padding: 12px;
-  margin-top: 15px;
+  margin-top: 10px;
   background-color: #3a3a3a;
   color: white;
   font-size: 16px;
@@ -93,19 +87,14 @@ select {
   transition: all 0.3s ease-in-out;
 }
 
-.submit-button:hover {
+
+.submit-button:hover,
+.drink-submit-button-done:hover,
+.drink-submit-button-back:hover {
   background-color: #5c5c5c;
   transform: scale(1.01);
 }
 
-.receipt-container {
-  background-color: rgba(176, 175, 175, 0.8);
-  padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  height: auto;
-}
 
 .receipt-title {
   text-align: center;
@@ -126,6 +115,7 @@ select {
   margin: 4px;
 }
 
+
 .drink-title {
   text-align: center;
   font-size: 28px;
@@ -133,19 +123,12 @@ select {
   margin: 40px 0;
 }
 
-.drink-form-container {
-  height: auto;
-  background-color: rgba(176, 175, 175, 0.8);
-  width: 900px;
-  align-items: center;
-}
-
 .drink-cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-content: center;
   height: auto;
+  grid-template-columns: 1fr; 
 }
 
 .drink-card {
@@ -180,168 +163,132 @@ select {
 }
 
 .drink-card ul {
-  padding-left: 1.2rem;     
+  padding-left: 1.2rem;
 }
 
-.card-buttons{
+.card-buttons {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin-top: 20px;
-  gap: 35px; 
-  
+  gap: 35px;
 }
 
-.card-button{
+.card-button,
+.card-button-less-button {
   width: 70px;
   height: 28px;
   background-color: #5a8cbf;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  
 }
 
-.card-button:hover{
-  background-color: #4e80b1;
-  transform: scale(1.01);
-}
-.card-button-less-button{
-  width: 70px;
-  height: 28px;
-  background-color: #5a8cbf;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
- 
-}
-
-.card-button-less-button:hover{
+.card-button:hover,
+.card-button-less-button:hover {
   background-color: #4e80b1;
   transform: scale(1.01);
 }
 
-.drink-detail{
-background-color: #dcddde;
-  width: 100%; 
+
+.drink-detail {
+  background-color: #dcddde;
+  width: 100%;
   border-radius: 8px;
   margin-top: 10px;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
 
-.detail-strdrink{
-  padding: 20px
+.detail-strdrink {
+  padding: 20px;
 }
 
-.image-detail{
-  width: auto; 
+.image-detail {
+  width: auto;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.drink-submit-button-done{
-  width: 97%;
-  margin-left: 13px;
-  padding: 12px 0;
-  margin-top: 8px;
-  margin-bottom: 10px;
-  background-color: #3a3a3a;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
 
-.drink-submit-button-back{
-  width: 97%;
-  margin-left: 13px;
-  padding: 12px 0;
-  margin-top: 10px;
-  margin-bottom: 7px;
-  background-color: #3a3a3a;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.drink-submit-button-done:hover{
-   background-color: #5c5c5c;
-  transform: scale(1.01);
-}
-
-.drink-submit-button-back:hover{
-   background-color: #5c5c5c;
-  transform: scale(1.01);
-}
- 
-.drink-card .title-skeleton{
+.drink-card .title-skeleton,
+.drink-detail .title-skeleton {
   width: 250px;
-  height: 25px;
+  height: 25-28px;
   margin: 15px 0;
-  
 }
 
-.drink-card .image-skeleton{
+.drink-card .image-skeleton,
+.drink-detail .image-skeleton {
   width: 250px;
   height: 150px;
 }
 
-.drink-card .id-skeleton{
-  margin: 15px 0;
+.drink-card .id-skeleton,
+.drink-detail .detail-by-id-skeleton {
   width: 150px;
   height: 30px;
-}
-
-.card-buttons .more-skeleton{
-  width: 70px;
-  height: 30px;
-}
-
-.card-buttons .less-skeleton{
-  width: 70px;
-  height: 30px;
-}
-
-.drink-detail .title-skeleton{
-  width: 250px;
-  height: 28px;
   margin: 15px 0;
-  
 }
 
-.drink-detail .image-skeleton{
-  width: 250px;
-  height: 150px; 
-}
-
-.drink-detail .detail-by-id-skeleton{
-  margin-top: 25px;
-  width: 250px;
-  height: 370px;
-}
 
 .language-selector {
-  position: fixed; 
-  top: 10px;      
-  left: 40px;      
-  z-index: 1000;  
+  position:absolute;
+  top: 10px;
+  left: 40px;
+  z-index: 1000;
 }
-.language-selector .language-changer{
-  background-color: rgba(176, 175, 175, 0.8);
 
+.language-selector .language-changer {
+  background-color: rgba(176, 175, 175, 0.8);
 }
 
 .language-selector select {
-  background-color: #eee; 
+  background-color: #eee;
   padding: 5px 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
   cursor: pointer;
   color: black;
 }
-.language-changer-option{
+
+.language-changer-option {
   background-color: #eee;
+}
+
+
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .customer-form,
+  .category-form,
+  .receipt-container,
+  .drink-form-container {
+    width: 70%; 
+  }
+
+  .drink-cards-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .customer-form,
+  .category-form,
+  .receipt-container {
+    width: 450px;
+  }
+
+  .drink-form-container {
+    width: 900px;
+  }
+
+  .drink-cards-container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
 }

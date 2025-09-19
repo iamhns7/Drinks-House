@@ -122,14 +122,14 @@ useEffect(() => {
         </div>
       )}
 
-      <div className="drink-buttons">
+    
         <button className="drink-submit-button-back" onClick={() => setStep(3)}>
         {t("drinkForm.buttons.back")}
         </button>
         <button className="drink-submit-button-done" onClick={() => setStep(1)}>
           {t("drinkForm.buttons.done")}
         </button>
-      </div>
+      
     </div>
   );
 }
